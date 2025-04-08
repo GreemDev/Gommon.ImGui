@@ -1,1 +1,1 @@
-dotnet publish -r Release
+dotnet publish -r Release -o buildOutput
