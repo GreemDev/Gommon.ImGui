@@ -1,4 +1,4 @@
-﻿using Silk.NET.SDL;
+﻿using System.Drawing;
 
 namespace Gommon.UI;
 
@@ -186,7 +186,7 @@ public static class Spectrum
         var r = (raw >> 16) & 0xFF;
         var g = (raw >> 8) & 0xFF;
         var b = (raw >> 0) & 0xFF;
-        return new Color((byte)r, (byte)g, (byte)b);
+        return System.Drawing.Color.FromArgb(255, (int)r, (int)g, (int)b);
     }
 }
 

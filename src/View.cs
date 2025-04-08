@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ImGuiNET;
 using Silk.NET.Input;
+// ReSharper disable UnusedMember.Global
 
 namespace Gommon.UI;
 
@@ -15,10 +16,10 @@ public abstract class UiView
     
     public Action<double> MainMenuBar { get; protected init; }
 
-    protected static ImGuiIOPtr Io => ImGuiNET.ImGui.GetIO();
+    protected static ImGuiIOPtr Io => ImGui.GetIO();
 
     public static bool IsKeyPressed(Key key)
-        => Io.KeysDown[(int)key];
+        => Io.KeysData[(int)key].Down > 0;
 
     public static bool IsMouseButtonPressed(MouseButton mb)
         => Io.MouseDown[(int)mb];
@@ -27,9 +28,8 @@ public abstract class UiView
     {
         if (keys.Length == 1)
             return IsKeyPressed(keys[0]);
-
-        var io = Io;
-        return keys.Select(key => io.KeysDown[(int)key])
+        
+        return keys.Select(IsKeyPressed)
             .All(x => x);
     }
 

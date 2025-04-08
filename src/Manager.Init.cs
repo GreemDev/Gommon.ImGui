@@ -11,7 +11,7 @@ using Silk.NET.Windowing;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
-using Color = Silk.NET.SDL.Color;
+using Color = System.Drawing.Color;
 
 namespace Gommon.UI;
 

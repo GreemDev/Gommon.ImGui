@@ -59,17 +59,18 @@ public sealed partial class UiManager
     {
         _isActive = true;
 
-        Lambda
-            .Repeat(async () =>
+        Executor.ExecuteBackgroundAsync(async () =>
+        {
+            while (_isActive)
             {
                 await Task.Delay(
-                    125); // tasks dont get added too often; so there's no need to run the polling below it as fast as possible.
+                    125); // tasks don't get added too often; so there's no need to run the polling below it as fast as possible.
                 if (TaskQueue.TryDequeue(out var task))
                     await task.ConfigureAwait(false);
-            })
-            .While(() => _isActive)
-            .Finally(() => TaskQueue.Clear())
-            .Async();
+            }
+            
+            TaskQueue.Clear();
+        });
 
         _window.Run();
     }

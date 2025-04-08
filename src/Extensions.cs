@@ -2,8 +2,6 @@
 using System.IO;
 using System.Numerics;
 using System.Text;
-using Gommon;
-using Silk.NET.SDL;
 
 namespace Gommon.UI;
 
@@ -20,12 +18,6 @@ public static class Extensions
         => new(color.R / 255f, color.G / 255f, color.B / 255f);
     
     public static Vector4 AsVec4(this System.Drawing.Color color)
-        => new(color.R / 255f, color.G / 255f, color.B / 255f, color.A / 255f);
-    
-    public static Vector3 AsVec3(this Color color)
-        => new(color.R / 255f, color.G / 255f, color.B / 255f);
-    
-    public static Vector4 AsVec4(this Color color)
         => new(color.R / 255f, color.G / 255f, color.B / 255f, color.A / 255f);
     
     #endregion Color
