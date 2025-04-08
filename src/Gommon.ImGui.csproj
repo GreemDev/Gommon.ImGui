@@ -8,7 +8,7 @@
         <Version>1.0.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <NoWarn>$(NoWarn);CS8500</NoWarn>
-        <Description></Description>
+        <Description>A simple wrapper around ImGuiNET &amp; Silk.NET for creating ImGui UIs with dock spaces in C# with ease. </Description>
         <PackageReleaseNotes>Initial release</PackageReleaseNotes>
         <PackageTags>Silk.NET;Silk;Silk.NET.Windowing;Silk.NET.OpenGL;Silk.NET.OpenGL.Extensions.ImGui;Silk.NET.Input;ImGui;UI;GUI</PackageTags>
     </PropertyGroup>
